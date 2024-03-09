@@ -1,0 +1,8 @@
+module sources
+
+openmaptiles {
+    type = "vector"
+    tiles = new Listing {
+        "https://tile.openstreetmap.jp/data/planet/{z}/{x}/{y}.pbf"
+    }
+}

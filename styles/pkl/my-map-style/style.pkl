@@ -1,0 +1,13 @@
+version = 8
+center = new Listing { 56.6 27.8 }
+zoom = 3
+sources = import("sources.pkl")
+sprite = "https://tile.openstreetmap.jp/styles/maptiler-toner-en/sprite"
+glyphs = "https://tile.openstreetmap.jp/fonts/{fontstack}/{range}.pbf"
+layers = new Listing {
+    import("../fiord-color-gl-style/layers/background.pkl")
+    import("../fiord-color-gl-style/layers/boundary_country_z0-4.pkl")
+    import("../fiord-color-gl-style/layers/boundary_country_z5-.pkl")
+    import("../fiord-color-gl-style/layers/boundary_state.pkl")
+    import("../positron-gl-style/layers/water.pkl")
+}
