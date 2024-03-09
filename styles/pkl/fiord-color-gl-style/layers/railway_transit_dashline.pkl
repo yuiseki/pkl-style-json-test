@@ -1,0 +1,41 @@
+id = "railway_transit_dashline"
+type = "line"
+metadata {
+  `mapbox:group` = "b6371a3f2f5a9932464fa3867530a2e5"
+}
+source = "openmaptiles"
+`source-layer` = "transportation"
+minzoom = 16
+filter {
+  "all"
+  new {
+    "=="
+    "$type"
+    "LineString"
+  }
+  new {
+    "all"
+    new {
+      "=="
+      "class"
+      "transit"
+    }
+    new {
+      "!in"
+      "brunnel"
+      "tunnel"
+    }
+  }
+}
+layout {
+  `line-join` = "round"
+  visibility = "visible"
+}
+paint {
+  `line-color` = "hsl(193, 63%, 26%)"
+  `line-dasharray` {
+    3
+    3
+  }
+  `line-width` = 2
+}

@@ -1,0 +1,44 @@
+id = "aeroway-runway"
+type = "line"
+metadata {
+  `mapbox:group` = "1444849345966.4436"
+}
+source = "openmaptiles"
+`source-layer` = "aeroway"
+minzoom = 11
+maxzoom = 24
+filter {
+  "all"
+  new {
+    "in"
+    "class"
+    "runway"
+  }
+  new {
+    "=="
+    "$type"
+    "LineString"
+  }
+}
+layout {
+  `line-cap` = "round"
+  `line-join` = "round"
+  visibility = "visible"
+}
+paint {
+  `line-color` = "hsl(224, 20%, 29%)"
+  `line-opacity` = 1
+  `line-width` {
+    base = 1.5
+    stops {
+      new {
+        11
+        4
+      }
+      new {
+        17
+        50
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+id = "place_suburb"
+type = "symbol"
+metadata {
+  `mapbox:group` = "101da9f13b64a08fa4b6ac1168e89e5f"
+}
+source = "openmaptiles"
+`source-layer` = "place"
+maxzoom = 15
+filter {
+  "all"
+  new {
+    "=="
+    "$type"
+    "Point"
+  }
+  new {
+    "=="
+    "class"
+    "suburb"
+  }
+}
+layout {
+  `text-anchor` = "center"
+  `text-field` = """
+    {name:latin}
+    {name:nonlatin}
+    """
+  `text-font` {
+    "Metropolis Regular"
+    "Noto Sans Regular"
+  }
+  `text-justify` = "center"
+  `text-offset` {
+    0.5
+    0
+  }
+  `text-size` = 10
+  `text-transform` = "uppercase"
+  visibility = "visible"
+}
+paint {
+  `text-color` = "hsl(195, 41%, 49%)"
+  `text-halo-blur` = 1
+  `text-halo-color` = "hsla(228, 60%, 21%, 0.7)"
+  `text-halo-width` = 1
+}

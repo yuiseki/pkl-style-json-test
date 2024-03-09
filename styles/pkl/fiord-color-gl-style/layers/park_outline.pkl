@@ -1,0 +1,17 @@
+id = "park_outline"
+type = "line"
+source = "openmaptiles"
+`source-layer` = "park"
+filter {
+  "=="
+  "$type"
+  "Polygon"
+}
+layout {}
+paint {
+  `line-color` = "hsl(205, 49%, 31%)"
+  `line-dasharray` {
+    2
+    2
+  }
+}

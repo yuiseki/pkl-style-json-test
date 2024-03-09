@@ -1,0 +1,40 @@
+id = "place_state"
+type = "symbol"
+metadata {
+  `mapbox:group` = "101da9f13b64a08fa4b6ac1168e89e5f"
+}
+source = "openmaptiles"
+`source-layer` = "place"
+maxzoom = 12
+filter {
+  "all"
+  new {
+    "=="
+    "$type"
+    "Point"
+  }
+  new {
+    "=="
+    "class"
+    "state"
+  }
+}
+layout {
+  `text-field` = """
+    {name:latin}
+    {name:nonlatin}
+    """
+  `text-font` {
+    "Metropolis Regular"
+    "Noto Sans Regular"
+  }
+  `text-size` = 10
+  `text-transform` = "uppercase"
+  visibility = "visible"
+}
+paint {
+  `text-color` = "rgb(113, 129, 144)"
+  `text-halo-blur` = 1
+  `text-halo-color` = "hsla(228, 60%, 21%, 0.7)"
+  `text-halo-width` = 1
+}

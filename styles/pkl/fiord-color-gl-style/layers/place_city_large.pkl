@@ -1,0 +1,68 @@
+id = "place_city_large"
+type = "symbol"
+metadata {
+  `mapbox:group` = "101da9f13b64a08fa4b6ac1168e89e5f"
+}
+source = "openmaptiles"
+`source-layer` = "place"
+maxzoom = 12
+filter {
+  "all"
+  new {
+    "=="
+    "$type"
+    "Point"
+  }
+  new {
+    "all"
+    new {
+      "<="
+      "rank"
+      3
+    }
+    new {
+      "=="
+      "class"
+      "city"
+    }
+  }
+}
+layout {
+  `icon-size` = 0.4
+  `text-anchor` {
+    base = 1
+    stops {
+      new {
+        0
+        "left"
+      }
+      new {
+        8
+        "center"
+      }
+    }
+  }
+  `text-field` = """
+    {name:latin}
+    {name:nonlatin}
+    """
+  `text-font` {
+    "Metropolis Regular"
+    "Noto Sans Regular"
+  }
+  `text-justify` = "left"
+  `text-offset` {
+    0.5
+    0.2
+  }
+  `text-size` = 14
+  `text-transform` = "uppercase"
+  visibility = "visible"
+}
+paint {
+  `icon-opacity` = 0.7
+  `text-color` = "hsl(195, 25%, 76%)"
+  `text-halo-blur` = 1
+  `text-halo-color` = "hsla(228, 60%, 21%, 0.7)"
+  `text-halo-width` = 1
+}

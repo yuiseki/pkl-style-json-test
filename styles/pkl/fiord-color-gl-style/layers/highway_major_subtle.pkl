@@ -1,0 +1,34 @@
+id = "highway_major_subtle"
+type = "line"
+metadata {
+  `mapbox:group` = "b6371a3f2f5a9932464fa3867530a2e5"
+}
+source = "openmaptiles"
+`source-layer` = "transportation"
+maxzoom = 11
+filter {
+  "all"
+  new {
+    "=="
+    "$type"
+    "LineString"
+  }
+  new {
+    "in"
+    "class"
+    "primary"
+    "secondary"
+    "tertiary"
+    "trunk"
+  }
+}
+layout {
+  `line-cap` = "round"
+  `line-join` = "round"
+  visibility = "visible"
+}
+paint {
+  `line-color` = "#3D4355"
+  `line-opacity` = 0.6
+  `line-width` = 2
+}

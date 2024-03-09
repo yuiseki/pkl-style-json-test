@@ -1,0 +1,5 @@
+id = "background"
+type = "background"
+paint {
+  `background-color` = "#45516E"
+}
