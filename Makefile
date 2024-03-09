@@ -9,10 +9,10 @@ styles/pkl/positron-gl-style/style.pkl:
 	pkl eval convert-json.pkl -p input=styles/json/positron-gl-style/style.json > styles/pkl/positron-gl-style/style.pkl
 
 styles/pkl/fiord-color-gl-style/layers/background.pkl:
-	pkl eval styles/pkl/fiord-color-gl-style/split-layers.pkl --multiple-file-output-path styles/pkl/fiord-color-gl-style/layers
+	pkl eval modulepath:/split-layers.pkl --module-path=./:./styles/pkl/fiord-color-gl-style --multiple-file-output-path styles/pkl/fiord-color-gl-style/layers
 
 styles/pkl/osm-bright-gl-style/layers/background.pkl:
-	pkl eval styles/pkl/osm-bright-gl-style/split-layers.pkl --multiple-file-output-path styles/pkl/osm-bright-gl-style/layers
+	pkl eval modulepath:/split-layers.pkl --module-path=./:./styles/pkl/osm-bright-gl-style --multiple-file-output-path styles/pkl/osm-bright-gl-style/layers
 
 styles/pkl/positron-gl-style/layers/background.pkl:
-	pkl eval styles/pkl/positron-gl-style/split-layers.pkl --multiple-file-output-path styles/pkl/positron-gl-style/layers
+	pkl eval modulepath:/split-layers.pkl --module-path=./:./styles/pkl/positron-gl-style --multiple-file-output-path styles/pkl/positron-gl-style/layers
