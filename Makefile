@@ -2,6 +2,9 @@
 styles/json/my-map-style/style.json:
 	pkl eval styles/pkl/my-map-style/style.pkl -f json > styles/json/my-map-style/style.json
 
+public/style.json: styles/json/my-map-style/style.json
+	cp styles/json/my-map-style/style.json public/style.json
+
 styles/pkl/fiord-color-gl-style/style.pkl:
 	pkl eval scripts/convert-json.pkl -p input=styles/json/fiord-color-gl-style/style.json > styles/pkl/fiord-color-gl-style/style.pkl
 
