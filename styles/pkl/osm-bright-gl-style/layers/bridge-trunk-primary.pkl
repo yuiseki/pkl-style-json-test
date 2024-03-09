@@ -1,0 +1,49 @@
+id = "bridge-trunk-primary"
+type = "line"
+metadata {
+  `mapbox:group` = "1444849334699.1902"
+}
+source = "openmaptiles"
+`source-layer` = "transportation"
+filter {
+  "all"
+  new {
+    "=="
+    "brunnel"
+    "bridge"
+  }
+  new {
+    "in"
+    "class"
+    "primary"
+    "trunk"
+  }
+  new {
+    "!="
+    "ramp"
+    1
+  }
+}
+layout {
+  `line-join` = "round"
+}
+paint {
+  `line-color` = "#fea"
+  `line-width` {
+    base = 1.2
+    stops {
+      new {
+        6.5
+        0
+      }
+      new {
+        7
+        0.5
+      }
+      new {
+        20
+        18
+      }
+    }
+  }
+}

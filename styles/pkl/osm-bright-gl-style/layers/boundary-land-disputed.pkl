@@ -1,0 +1,50 @@
+id = "boundary-land-disputed"
+type = "line"
+source = "openmaptiles"
+`source-layer` = "boundary"
+filter {
+  "all"
+  new {
+    "!="
+    "maritime"
+    1
+  }
+  new {
+    "=="
+    "disputed"
+    1
+  }
+}
+layout {
+  `line-cap` = "round"
+  `line-join` = "round"
+  visibility = "visible"
+}
+paint {
+  `line-color` = "hsl(248, 7%, 70%)"
+  `line-dasharray` {
+    1
+    3
+  }
+  `line-width` {
+    base = 1
+    stops {
+      new {
+        0
+        0.6
+      }
+      new {
+        4
+        1.4
+      }
+      new {
+        5
+        2
+      }
+      new {
+        12
+        8
+      }
+    }
+  }
+}

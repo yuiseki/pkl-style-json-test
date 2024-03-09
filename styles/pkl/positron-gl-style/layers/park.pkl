@@ -1,0 +1,15 @@
+id = "park"
+type = "fill"
+source = "openmaptiles"
+`source-layer` = "park"
+filter {
+  "=="
+  "$type"
+  "Polygon"
+}
+layout {
+  visibility = "visible"
+}
+paint {
+  `fill-color` = "rgb(230, 233, 229)"
+}

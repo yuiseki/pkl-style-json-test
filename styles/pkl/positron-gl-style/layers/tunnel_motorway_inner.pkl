@@ -1,0 +1,54 @@
+id = "tunnel_motorway_inner"
+type = "line"
+metadata {
+  `mapbox:group` = "b6371a3f2f5a9932464fa3867530a2e5"
+}
+source = "openmaptiles"
+`source-layer` = "transportation"
+minzoom = 6
+filter {
+  "all"
+  new {
+    "=="
+    "$type"
+    "LineString"
+  }
+  new {
+    "all"
+    new {
+      "=="
+      "brunnel"
+      "tunnel"
+    }
+    new {
+      "=="
+      "class"
+      "motorway"
+    }
+  }
+}
+layout {
+  `line-cap` = "round"
+  `line-join` = "round"
+  visibility = "visible"
+}
+paint {
+  `line-color` = "rgb(234,234,234)"
+  `line-width` {
+    base = 1.4
+    stops {
+      new {
+        4
+        2
+      }
+      new {
+        6
+        1.3
+      }
+      new {
+        20
+        30
+      }
+    }
+  }
+}

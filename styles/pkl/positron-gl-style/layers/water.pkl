@@ -1,0 +1,24 @@
+id = "water"
+type = "fill"
+source = "openmaptiles"
+`source-layer` = "water"
+filter {
+  "all"
+  new {
+    "=="
+    "$type"
+    "Polygon"
+  }
+  new {
+    "!="
+    "brunnel"
+    "tunnel"
+  }
+}
+layout {
+  visibility = "visible"
+}
+paint {
+  `fill-antialias` = true
+  `fill-color` = "rgb(194, 200, 202)"
+}

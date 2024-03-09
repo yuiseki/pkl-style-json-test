@@ -1,0 +1,37 @@
+id = "railway_service_dashline"
+type = "line"
+metadata {
+  `mapbox:group` = "b6371a3f2f5a9932464fa3867530a2e5"
+}
+source = "openmaptiles"
+`source-layer` = "transportation"
+minzoom = 16
+filter {
+  "all"
+  new {
+    "=="
+    "$type"
+    "LineString"
+  }
+  new {
+    "=="
+    "class"
+    "rail"
+  }
+  new {
+    "has"
+    "service"
+  }
+}
+layout {
+  `line-join` = "round"
+  visibility = "visible"
+}
+paint {
+  `line-color` = "#fafafa"
+  `line-dasharray` {
+    3
+    3
+  }
+  `line-width` = 2
+}

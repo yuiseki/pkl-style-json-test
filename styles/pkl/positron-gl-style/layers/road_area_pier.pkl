@@ -1,0 +1,25 @@
+id = "road_area_pier"
+type = "fill"
+metadata {}
+source = "openmaptiles"
+`source-layer` = "transportation"
+filter {
+  "all"
+  new {
+    "=="
+    "$type"
+    "Polygon"
+  }
+  new {
+    "=="
+    "class"
+    "pier"
+  }
+}
+layout {
+  visibility = "visible"
+}
+paint {
+  `fill-antialias` = true
+  `fill-color` = "rgb(242,243,240)"
+}

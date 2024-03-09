@@ -1,0 +1,48 @@
+id = "railway"
+type = "line"
+metadata {
+  `mapbox:group` = "b6371a3f2f5a9932464fa3867530a2e5"
+}
+source = "openmaptiles"
+`source-layer` = "transportation"
+minzoom = 13
+filter {
+  "all"
+  new {
+    "=="
+    "$type"
+    "LineString"
+  }
+  new {
+    "all"
+    new {
+      "!has"
+      "service"
+    }
+    new {
+      "=="
+      "class"
+      "rail"
+    }
+  }
+}
+layout {
+  `line-join` = "round"
+  visibility = "visible"
+}
+paint {
+  `line-color` = "#dddddd"
+  `line-width` {
+    base = 1.3
+    stops {
+      new {
+        16
+        3
+      }
+      new {
+        20
+        7
+      }
+    }
+  }
+}

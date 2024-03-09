@@ -1,0 +1,49 @@
+id = "place_other"
+type = "symbol"
+metadata {
+  `mapbox:group` = "101da9f13b64a08fa4b6ac1168e89e5f"
+}
+source = "openmaptiles"
+`source-layer` = "place"
+maxzoom = 14
+filter {
+  "all"
+  new {
+    "in"
+    "class"
+    "continent"
+    "hamlet"
+    "neighbourhood"
+    "isolated_dwelling"
+  }
+  new {
+    "=="
+    "$type"
+    "Point"
+  }
+}
+layout {
+  `text-anchor` = "center"
+  `text-field` = """
+    {name:latin}
+    {name:nonlatin}
+    """
+  `text-font` {
+    "Metropolis Regular"
+    "Noto Sans Regular"
+  }
+  `text-justify` = "center"
+  `text-offset` {
+    0.5
+    0
+  }
+  `text-size` = 10
+  `text-transform` = "uppercase"
+  visibility = "visible"
+}
+paint {
+  `text-color` = "rgb(117, 129, 145)"
+  `text-halo-blur` = 1
+  `text-halo-color` = "rgb(242,243,240)"
+  `text-halo-width` = 1
+}

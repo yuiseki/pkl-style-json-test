@@ -1,0 +1,49 @@
+id = "highway_major_casing"
+type = "line"
+metadata {
+  `mapbox:group` = "b6371a3f2f5a9932464fa3867530a2e5"
+}
+source = "openmaptiles"
+`source-layer` = "transportation"
+minzoom = 11
+filter {
+  "all"
+  new {
+    "=="
+    "$type"
+    "LineString"
+  }
+  new {
+    "in"
+    "class"
+    "primary"
+    "secondary"
+    "tertiary"
+    "trunk"
+  }
+}
+layout {
+  `line-cap` = "butt"
+  `line-join` = "miter"
+  visibility = "visible"
+}
+paint {
+  `line-color` = "rgb(213, 213, 213)"
+  `line-dasharray` {
+    12
+    0
+  }
+  `line-width` {
+    base = 1.3
+    stops {
+      new {
+        10
+        3
+      }
+      new {
+        20
+        23
+      }
+    }
+  }
+}

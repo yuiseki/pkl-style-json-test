@@ -1,0 +1,45 @@
+id = "highway_minor"
+type = "line"
+metadata {
+  `mapbox:group` = "b6371a3f2f5a9932464fa3867530a2e5"
+}
+source = "openmaptiles"
+`source-layer` = "transportation"
+minzoom = 8
+filter {
+  "all"
+  new {
+    "=="
+    "$type"
+    "LineString"
+  }
+  new {
+    "in"
+    "class"
+    "minor"
+    "service"
+    "track"
+  }
+}
+layout {
+  `line-cap` = "round"
+  `line-join` = "round"
+  visibility = "visible"
+}
+paint {
+  `line-color` = "hsl(0, 0%, 88%)"
+  `line-opacity` = 0.9
+  `line-width` {
+    base = 1.55
+    stops {
+      new {
+        13
+        1.8
+      }
+      new {
+        20
+        20
+      }
+    }
+  }
+}

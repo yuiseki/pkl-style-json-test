@@ -1,0 +1,37 @@
+id = "landuse_residential"
+type = "fill"
+source = "openmaptiles"
+`source-layer` = "landuse"
+maxzoom = 16
+filter {
+  "all"
+  new {
+    "=="
+    "$type"
+    "Polygon"
+  }
+  new {
+    "=="
+    "class"
+    "residential"
+  }
+}
+layout {
+  visibility = "visible"
+}
+paint {
+  `fill-color` = "rgb(234, 234, 230)"
+  `fill-opacity` {
+    base = 0.6
+    stops {
+      new {
+        8
+        0.8
+      }
+      new {
+        9
+        0.6
+      }
+    }
+  }
+}

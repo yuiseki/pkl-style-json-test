@@ -1,0 +1,37 @@
+id = "landcover_wood"
+type = "fill"
+source = "openmaptiles"
+`source-layer` = "landcover"
+minzoom = 10
+filter {
+  "all"
+  new {
+    "=="
+    "$type"
+    "Polygon"
+  }
+  new {
+    "=="
+    "class"
+    "wood"
+  }
+}
+layout {
+  visibility = "visible"
+}
+paint {
+  `fill-color` = "rgb(220,224,220)"
+  `fill-opacity` {
+    base = 1
+    stops {
+      new {
+        8
+        0
+      }
+      new {
+        12
+        1
+      }
+    }
+  }
+}

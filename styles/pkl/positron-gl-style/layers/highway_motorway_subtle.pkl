@@ -1,0 +1,42 @@
+id = "highway_motorway_subtle"
+type = "line"
+metadata {
+  `mapbox:group` = "b6371a3f2f5a9932464fa3867530a2e5"
+}
+source = "openmaptiles"
+`source-layer` = "transportation"
+maxzoom = 6
+filter {
+  "all"
+  new {
+    "=="
+    "$type"
+    "LineString"
+  }
+  new {
+    "=="
+    "class"
+    "motorway"
+  }
+}
+layout {
+  `line-cap` = "round"
+  `line-join` = "round"
+  visibility = "visible"
+}
+paint {
+  `line-color` = "hsla(0, 0%, 85%, 0.53)"
+  `line-width` {
+    base = 1.4
+    stops {
+      new {
+        4
+        2
+      }
+      new {
+        6
+        1.3
+      }
+    }
+  }
+}

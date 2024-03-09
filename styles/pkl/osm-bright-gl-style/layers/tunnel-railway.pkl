@@ -1,0 +1,44 @@
+id = "tunnel-railway"
+type = "line"
+metadata {
+  `mapbox:group` = "1444849354174.1904"
+}
+source = "openmaptiles"
+`source-layer` = "transportation"
+filter {
+  "all"
+  new {
+    "=="
+    "brunnel"
+    "tunnel"
+  }
+  new {
+    "=="
+    "class"
+    "rail"
+  }
+}
+paint {
+  `line-color` = "#bbb"
+  `line-dasharray` {
+    2
+    2
+  }
+  `line-width` {
+    base = 1.4
+    stops {
+      new {
+        14
+        0.4
+      }
+      new {
+        15
+        0.75
+      }
+      new {
+        20
+        2
+      }
+    }
+  }
+}

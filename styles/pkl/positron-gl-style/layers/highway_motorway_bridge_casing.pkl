@@ -1,0 +1,59 @@
+id = "highway_motorway_bridge_casing"
+type = "line"
+metadata {
+  `mapbox:group` = "b6371a3f2f5a9932464fa3867530a2e5"
+}
+source = "openmaptiles"
+`source-layer` = "transportation"
+minzoom = 6
+filter {
+  "all"
+  new {
+    "=="
+    "$type"
+    "LineString"
+  }
+  new {
+    "all"
+    new {
+      "=="
+      "brunnel"
+      "bridge"
+    }
+    new {
+      "=="
+      "class"
+      "motorway"
+    }
+  }
+}
+layout {
+  `line-cap` = "butt"
+  `line-join` = "miter"
+  visibility = "visible"
+}
+paint {
+  `line-color` = "rgb(213, 213, 213)"
+  `line-dasharray` {
+    2
+    0
+  }
+  `line-opacity` = 1
+  `line-width` {
+    base = 1.4
+    stops {
+      new {
+        5.8
+        0
+      }
+      new {
+        6
+        5
+      }
+      new {
+        20
+        45
+      }
+    }
+  }
+}

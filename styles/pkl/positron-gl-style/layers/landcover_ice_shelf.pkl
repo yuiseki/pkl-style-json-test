@@ -1,0 +1,25 @@
+id = "landcover_ice_shelf"
+type = "fill"
+source = "openmaptiles"
+`source-layer` = "landcover"
+maxzoom = 8
+filter {
+  "all"
+  new {
+    "=="
+    "$type"
+    "Polygon"
+  }
+  new {
+    "=="
+    "subclass"
+    "ice_shelf"
+  }
+}
+layout {
+  visibility = "visible"
+}
+paint {
+  `fill-color` = "hsl(0, 0%, 98%)"
+  `fill-opacity` = 0.7
+}
