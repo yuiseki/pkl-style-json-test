@@ -6,8 +6,19 @@ sprite = "https://tile.openstreetmap.jp/styles/maptiler-toner-en/sprite"
 glyphs = "https://tile.openstreetmap.jp/fonts/{fontstack}/{range}.pbf"
 layers = new Listing {
     import("../fiord-color-gl-style/layers/background.pkl")
+    import("../positron-gl-style/layers/water.pkl")
     import("../fiord-color-gl-style/layers/boundary_country_z0-4.pkl")
     import("../fiord-color-gl-style/layers/boundary_country_z5-.pkl")
     import("../fiord-color-gl-style/layers/boundary_state.pkl")
-    import("../positron-gl-style/layers/water.pkl")
+    import("../osm-bright-gl-style/layers/place-other.pkl")
+    import("../osm-bright-gl-style/layers/place-village.pkl")
+    import("../osm-bright-gl-style/layers/place-town.pkl")
+    import("../osm-bright-gl-style/layers/place-city.pkl")
+    import("../osm-bright-gl-style/layers/place-city-capital.pkl")
+    import("../osm-bright-gl-style/layers/place-state.pkl")
+    import("../osm-bright-gl-style/layers/place-country-other.pkl")
+    import("../osm-bright-gl-style/layers/place-country-3.pkl")
+    import("../osm-bright-gl-style/layers/place-country-2.pkl")
+    import("../osm-bright-gl-style/layers/place-country-1.pkl")
+    import("../osm-bright-gl-style/layers/place-continent.pkl")
 }

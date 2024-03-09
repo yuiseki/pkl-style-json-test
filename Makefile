@@ -1,4 +1,10 @@
 
+all: public/style.json
+
+clean:
+	rm -rf styles/json/my-map-style/style.json
+	rm -rf public/style.json
+
 styles/json/my-map-style/style.json:
 	pkl eval styles/pkl/my-map-style/style.pkl -f json > styles/json/my-map-style/style.json
 
