@@ -1,0 +1,14 @@
+import "pkl:json"
+input = read("prop:input")
+
+local inputUri =
+  if (input.startsWith(Regex(#"\w+:"#))) input      // absolute URI
+  else if (input.startsWith("/")) "file://\(input)" // absolute file path
+  else "file://\(read("env:PWD"))/\(input)"         // relative file path
+
+file = read(inputUri)
+parsed = new json.Parser {}.parse(file)
+
+output {
+  value = parsed
+}
